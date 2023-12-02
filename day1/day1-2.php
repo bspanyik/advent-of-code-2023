@@ -1,10 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 const DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
-$sum = 0;
+$lines = file($argv[1] ?? 'input.txt', FILE_IGNORE_NEW_LINES);
+if ($lines === false) {
+    die('There\'s something wrong with the input file. I don\'t know what it is.' . PHP_EOL);
+}
 
-$lines = explode(PHP_EOL, trim(file_get_contents('input.txt')));
+$sum = 0;
 foreach ($lines as $line) {
     $sum += getCalibrationValue($line);
 }
@@ -27,13 +32,12 @@ function getCalibrationValue(string $line): int
             $digits[$pos] = $index < 10 ? $index : $index - 9;
         }
     }
-        
+
     if (empty($digits)) {
         return 0;
     }
-        
-    ksort($digits);
-    $calibrationValue = reset($digits) * 10 + end($digits);
 
-    return (int) $calibrationValue;
+    ksort($digits);
+
+    return reset($digits) * 10 + end($digits);
 }
