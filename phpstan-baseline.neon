@@ -1,0 +1,6 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Binary operation \"\\*\" between int\\|string and int\\|string results in an error\\.$#"
+			count: 1
+			path: day2/day2-2.php
