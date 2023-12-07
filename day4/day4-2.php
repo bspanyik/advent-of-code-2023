@@ -13,7 +13,7 @@ foreach ($lines as $index => $line) {
     $cardNumber = $index + 1;
     [, $card] = explode(': ', $line);
     $numbers = array_map(
-        fn ($item) => array_filter(
+        fn($item) => array_filter(
             explode(' ', $item)
         ),
         explode(' | ', $card)

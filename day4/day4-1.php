@@ -11,7 +11,7 @@ $sum = 0;
 foreach ($lines as $line) {
     [, $card] = explode(': ', $line);
     $numbers = array_map(
-        fn ($item) => array_filter(
+        fn($item) => array_filter(
             explode(' ', $item)
         ),
         explode(' | ', $card)
