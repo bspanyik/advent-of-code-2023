@@ -15,6 +15,10 @@ return function (ECSConfig $ecsConfig): void {
         __DIR__ . '/day1',
         __DIR__ . '/day2',
         __DIR__ . '/day3',
+        __DIR__ . '/day4',
+        __DIR__ . '/day5',
+        __DIR__ . '/day6',
+        __DIR__ . '/day7',
     ]);
 
     // this way you add a single rule
@@ -26,7 +30,7 @@ return function (ECSConfig $ecsConfig): void {
     $ecsConfig->rulesWithConfiguration([
         ConcatSpaceFixer::class => ['spacing' => 'one'],
         FunctionDeclarationFixer::class => ['closure_fn_spacing' => 'none'],
-        BinaryOperatorSpacesFixer::class => ['operators' => ['=>' => 'align_single_space_minimal']],
+        BinaryOperatorSpacesFixer::class => ['operators' => ['=>' => 'at_least_single_space']],
     ]);
 
     // this way you can add sets - group of rules
