@@ -80,8 +80,6 @@ foreach ($almanac as $map) {
         $firstRow = findSeedInMap($first, $map);
         $lastRow = findSeedInMap($last, $map);
 
-        echo $first . ' [' . ($firstRow !== false ? $firstRow : 'false') . '] | ' . $last . ' [' . ($lastRow !== false ? $lastRow : 'false') . ']' . PHP_EOL;
-
         if ($firstRow === $lastRow) {
             if ($firstRow !== false) {
                 $row = $map[$firstRow];
