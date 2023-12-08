@@ -7,9 +7,6 @@ if ($lines === false) {
     die('There\'s something wrong with the input file. I don\'t know what it is.' . PHP_EOL);
 }
 
-// seeds
-$seeds = array_map('intval', explode(' ', str_replace('seeds: ', '', $lines[0])));
-
 $numberOfLines = count($lines);
 $currentLine = 3;
 $map = [];
@@ -25,8 +22,16 @@ while ($currentLine < $numberOfLines) {
     $currentLine += 2;
 }
 
+// seeds
+$seeds = array_map(
+    callback: 'intval',
+    array: explode(
+        separator: ' ',
+        string: str_replace('seeds: ', '', $lines[0])
+    )
+);
+
 foreach ($seeds as $seed) {
-    // echo $seed . ' ';
     foreach ($map as $category) {
         for ($i = 0; $i < count($category); $i++) {
             if ($seed >= $category[$i][0] && $seed < $category[$i][1]) {
@@ -34,8 +39,8 @@ foreach ($seeds as $seed) {
                 break;
             }
         }
-        // echo $seed . ' ';
     }
+
     if (!isset($minSeed)) {
         $minSeed = $seed;
     } else {
@@ -43,4 +48,4 @@ foreach ($seeds as $seed) {
     }
 }
 
-echo $minSeed . PHP_EOL;
+echo ($minSeed ?? 'no seeds?') . PHP_EOL;

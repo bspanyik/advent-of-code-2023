@@ -59,7 +59,6 @@ while ($currentLine < $lineCount) {
     for ($i = 1; $i < count($section); $i++) {
         $row = $section[$i];
         if ($row['start'] - $previousRow['end'] > 1) {
-            echo PHP_EOL;
             array_splice($section, $i, 0, [
                 [
                     'start' => $previousRow['end'] + 1,
@@ -75,7 +74,6 @@ while ($currentLine < $lineCount) {
     $currentLine += 2;
 }
 
-$locations = [];
 foreach ($almanac as $map) {
     $newSeedRanges = [];
     foreach ($seedRanges as [$first, $last]) {
