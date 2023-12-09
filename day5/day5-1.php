@@ -31,6 +31,7 @@ $seeds = array_map(
     )
 );
 
+$minSeed = null;
 foreach ($seeds as $seed) {
     foreach ($map as $category) {
         for ($i = 0; $i < count($category); $i++) {
@@ -48,4 +49,4 @@ foreach ($seeds as $seed) {
     }
 }
 
-echo ($minSeed ?? 'no seeds?') . PHP_EOL;
+echo $minSeed . PHP_EOL;
