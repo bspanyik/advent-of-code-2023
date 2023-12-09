@@ -19,6 +19,8 @@ return function (ECSConfig $ecsConfig): void {
         __DIR__ . '/day5',
         __DIR__ . '/day6',
         __DIR__ . '/day7',
+        __DIR__ . '/day8',
+        __DIR__ . '/day9',
     ]);
 
     // this way you add a single rule
