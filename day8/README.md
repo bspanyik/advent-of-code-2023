@@ -32,6 +32,9 @@ Of course, you might not find ZZZ right away. If you run out of left/right instr
 
 Starting at AAA, follow the left/right instructions. **How many steps are required to reach ZZZ?**
 
+Your puzzle answer was 24253.
+<br><br>
+
 **--- Part Two ---**
 
 The sandstorm is upon you and you aren't any closer to escaping the wasteland. You had the camel follow the instructions, but you've barely left your starting position. It's going to take **significantly more steps** to escape!
@@ -66,3 +69,5 @@ Here, there are two starting nodes, 11A and 22A (because they both end with A). 
 - So, in this example, you end up entirely on nodes that end in Z after **6** steps.
 
 Simultaneously start on every node that ends with A. **How many steps does it take before you're only on nodes that end with Z?**
+
+Your puzzle answer was 12357789728873.

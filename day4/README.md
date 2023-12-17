@@ -35,6 +35,9 @@ In the above example, card 1 has five winning numbers (41, 48, 83, 86, and 17) a
 
 Take a seat in the large pile of colorful cards. How many points are they worth in total?
 
+Your puzzle answer was 25174.
+<br><br>
+
 **--- Part Two ---**
 
 Just as you're about to report your findings to the Elf, one of you realizes that the rules have actually been printed on the back of every card this whole time.
@@ -65,3 +68,5 @@ This time, the above example goes differently:
 - Once all of the originals and copies have been processed, you end up with **1** instance of card 1, **2** instances of card 2, **4** instances of card 3, **8** instances of card 4, **14** instances of card 5, and **1** instance of card 6. In total, this example pile of scratchcards causes you to ultimately have **30** scratchcards!
 
 Process all of the original and copied scratchcards until no more scratchcards are won. Including the original set of scratchcards, **how many total scratchcards do you end up with?**
+
+Your puzzle answer was 6420979.
