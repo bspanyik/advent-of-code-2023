@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$inputFile = $argv[1] ?? 'input-test.txt';
+$inputFile = $argv[1] ?? 'input.txt';
 if (!file_exists($inputFile)) {
     die(sprintf('The input file (%s) does not exist.' . PHP_EOL, $inputFile));
 }
@@ -16,13 +16,13 @@ $input = explode(',', $input);
 
 $sum = 0;
 foreach ($input as $text) {
-    $sum += hash($text);
+    $sum += theHolidayASCIIStringHelper($text);
 }
 
 echo $sum . PHP_EOL;
 
 // Holiday Ascii String Helper algorithm :D
-function hash(string $string): int
+function theHolidayASCIIStringHelper(string $string): int
 {
     $currentValue = 0;
     foreach (str_split($string) as $char) {

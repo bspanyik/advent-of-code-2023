@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$inputFile = $argv[1] ?? 'input-test.txt';
+$inputFile = $argv[1] ?? 'input.txt';
 if (!file_exists($inputFile)) {
     die(sprintf('The input file (%s) does not exist.' . PHP_EOL, $inputFile));
 }
@@ -18,11 +18,11 @@ $boxes = [];
 foreach ($input as $text) {
     if (str_contains($text, '=')) {
         [$label,$lens] = explode('=', $text);
-        $boxNumber = hash($label);
+        $boxNumber = theHolidayASCIIStringHelper($label);
         $boxes[$boxNumber][$label] = (int) $lens;
     } else {
         $label = rtrim($text, '-');
-        $boxNumber = hash($label);
+        $boxNumber = theHolidayASCIIStringHelper($label);
         unset($boxes[$boxNumber][$label]);
     }
 }
@@ -38,7 +38,7 @@ foreach ($boxes as $boxNumber => $box) {
 
 echo $focusingPower . PHP_EOL;
 
-function hash(string $string): int
+function theHolidayASCIIStringHelper(string $string): int
 {
     $currentValue = 0;
     foreach (str_split($string) as $char) {
