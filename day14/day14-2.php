@@ -6,7 +6,7 @@ const DIRECTIONS = ['N', 'W', 'E', 'S'];
 
 const CYCLES = 1000000000;
 
-$inputFile = $argv[1] ?? 'input-test.txt';
+$inputFile = $argv[1] ?? 'input.txt';
 if (!file_exists($inputFile)) {
     die(sprintf('The input file (%s) does not exist.' . PHP_EOL, $inputFile));
 }
@@ -17,7 +17,7 @@ if ($map === false) {
 }
 
 // explode string to chars and transpose (col --> row)
-$map = array_map(null, array_map('str_split', $map));
+$map = array_map(null, ...array_map('str_split', $map));
 
 $begins = microtime(true);
 
@@ -47,6 +47,7 @@ foreach (DIRECTIONS as $direction) {
 }
 
 $states = [[]];
+$cycle = 0;
 for ($cycle = 1; $cycle <= CYCLES; $cycle++) {
     foreach (DIRECTIONS as $direction) {
         $rowCount = count($map);

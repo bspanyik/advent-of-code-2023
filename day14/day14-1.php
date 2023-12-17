@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$inputFile = $argv[1] ?? 'input-test.txt';
+$inputFile = $argv[1] ?? 'input.txt';
 if (!file_exists($inputFile)) {
     die(sprintf('The input file (%s) doesn\'t seem to exist.' . PHP_EOL, $inputFile));
 }
